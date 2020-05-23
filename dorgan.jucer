@@ -3,6 +3,10 @@
 <JUCERPROJECT id="svZ23X" name="dorgan" projectType="guiapp" jucerVersion="5.4.7">
   <MAINGROUP id="qLKBCm" name="dorgan">
     <GROUP id="{B98F0AB2-4D5B-FD20-ADBA-003D0D55F07F}" name="Source">
+      <GROUP id="{A5AC400E-37D5-2BA7-70EF-D862C4EBDA10}" name="MCP3008">
+        <FILE id="EF3zix" name="gpio.h" compile="0" resource="0" file="Source/MCP3008/gpio.h"/>
+        <FILE id="pXqaHf" name="mcp3008.h" compile="0" resource="0" file="Source/MCP3008/mcp3008.h"/>
+      </GROUP>
       <FILE id="SpgfM8" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="cl347f" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
