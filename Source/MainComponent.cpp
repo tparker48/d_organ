@@ -1,36 +1,42 @@
 #include "MainComponent.h"
 
-//==============================================================================
 MainComponent::MainComponent()
 {
-    // Some platforms require permissions to open input channels so request that here
-    if (RuntimePermissions::isRequired (RuntimePermissions::recordAudio)
-        && ! RuntimePermissions::isGranted (RuntimePermissions::recordAudio))
+    setSize(1, 1);
+
+    if (RuntimePermissions::isRequired(RuntimePermissions::recordAudio)
+        && !RuntimePermissions::isGranted(RuntimePermissions::recordAudio))
     {
-        RuntimePermissions::request (RuntimePermissions::recordAudio,
-                                     [&] (bool granted) { if (granted)  setAudioChannels (2, 2); });
+        RuntimePermissions::request(RuntimePermissions::recordAudio,
+            [&](bool granted) { if (granted)  setAudioChannels(2, 2); });
     }
     else
     {
-        setAudioChannels (0, 1);
+        setAudioChannels(0, 1);
     }
+
+    dorgan.clearVoices();
+    dorgan.addVoice(new DOrganVoice());
+    dorgan.addVoice(new DOrganVoice());
+    dorgan.addVoice(new DOrganVoice());
+    dorgan.addVoice(new DOrganVoice());
+
+    dorgan.clearSounds();
+    dorgan.addSound(new DOrganSound());
 }
 
-MainComponent::~MainComponent()
+void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate)
 {
-    shutdownAudio();
+    dorgan.setCurrentPlaybackSampleRate(sampleRate);
 }
 
-//==============================================================================
-void MainComponent::prepareToPlay (int samplesPerBlockExpected, double sampleRate)
+void MainComponent::getNextAudioBlock(const AudioSourceChannelInfo& bufferToFill)
 {
+    dorgan.noteOn(1, 1, 0.0);
+    dorgan.renderNextBlock(*(bufferToFill.buffer), trash, bufferToFill.startSample, bufferToFill.numSamples);
 }
 
-void MainComponent::getNextAudioBlock (const AudioSourceChannelInfo& bufferToFill)
-{
-    bufferToFill.clearActiveBufferRegion();
-}
-
-void MainComponent::releaseResources()
-{
-}
+MainComponent::~MainComponent() {shutdownAudio();}
+void MainComponent::releaseResources() {}
+void MainComponent::paint(Graphics& g) {}
+void MainComponent::resized() {}

@@ -2331,11 +2331,17 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\DOrganSound.h">
+      <Filter>dorgan\Source</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\MCP3008\gpio.h">
       <Filter>dorgan\Source\MCP3008</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\MCP3008\mcp3008.h">
       <Filter>dorgan\Source\MCP3008</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\DOrganVoice.h">
+      <Filter>dorgan\Source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\MainComponent.h">
       <Filter>dorgan\Source</Filter>

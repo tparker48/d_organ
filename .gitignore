@@ -1,0 +1,6 @@
+
+Builds
+*.db
+*.opendb
+*.ipch
+*.user
