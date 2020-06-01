@@ -138,6 +138,8 @@
     <Lib/>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\MCP3008.cpp"/>
+    <ClCompile Include="..\..\Source\GPIO.cpp"/>
     <ClCompile Include="..\..\Source\MainComponent.cpp"/>
     <ClCompile Include="..\..\Source\Main.cpp"/>
     <ClCompile Include="..\..\..\..\..\..\JUCE\modules\juce_audio_basics\buffers\juce_AudioChannelSet.cpp">
@@ -1907,9 +1909,9 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_opengl.cpp"/>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\MCP3008.h"/>
+    <ClInclude Include="..\..\Source\GPIO.h"/>
     <ClInclude Include="..\..\Source\DOrganSound.h"/>
-    <ClInclude Include="..\..\Source\MCP3008\gpio.h"/>
-    <ClInclude Include="..\..\Source\MCP3008\mcp3008.h"/>
     <ClInclude Include="..\..\Source\DOrganVoice.h"/>
     <ClInclude Include="..\..\Source\MainComponent.h"/>
     <ClInclude Include="..\..\..\..\..\..\JUCE\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.h"/>

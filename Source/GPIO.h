@@ -1,4 +1,6 @@
-#include <stdio.h>
+// This class was created as a modification some code by Gabriel Perez-Cerezo
+// The original comments from that code have been preserved:
+
 /* 
  To use this library, you first need to export the pins.
  A script to do this on a Raspberry Pi is available at 
@@ -26,39 +28,23 @@
 
 */
 
-const char path[] = "/sys/class/gpio/gpio";
-char pinpath[40];
+#ifndef JUCE_GPIO_GPIO_H
+#define JUCE_GPIO_GPIO_H
 
+#include <stdio.h>
 
-void gpio_init(int pin, char *direction) { // sets the direction of a pin. Allowed values are "in" and "out"
-  FILE *f;
-  sprintf(pinpath, "%s%d/direction", path,  pin);
-  f = fopen(pinpath, "w");
-  fprintf(f, "%s", direction);
-  fclose(f);
+namespace JUCE_GPIO
+{
+  class GPIO
+  {
+  public:
+    void init(int pin, char *direction); // sets the direction of a pin. Allowed values are "in" and "out"
+    void write(int pin, int value); // sets the output value of the pin. Allowed values are 1 and 0.
+    int read(int pin); // reads input value from the specified GPIO pin. Returns 1 or 0.
+  private:
+    const char path[21] = "/sys/class/gpio/gpio";
+    char pinpath[40];
+  };
 }
 
-void gpio_write(int pin, int value) { // sets the output value of the pin. Allowed values are 1 and 0.
-  sprintf(pinpath, "%s%d/value", path, pin);
-  FILE *f;
-  f = fopen(pinpath, "w");
-  fprintf(f, "%d", value);
-  fclose(f);
-}
-
-int gpio_read(int pin) { // reads input value from the specified GPIO pin. Returns 1 or 0.
-  sprintf(pinpath, "%s%d/value", path, pin);
-  FILE *f;
-  f = fopen(pinpath, "r");
-  int x;
-  if ((x = fgetc(f))!=EOF){
-    x = (x==49); /* Returns 1 if the input value is HIGH. (fgetc returns 49 when the input value is HIGH). Returns 0 if it is low.
-		   */
-  }else{
-    x = -1;        // -1 is returned when there is an error.
-  }
-  fclose(f);
-  return x;       
-}
-  
-
+#endif

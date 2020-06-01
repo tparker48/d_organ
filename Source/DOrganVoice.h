@@ -2,6 +2,7 @@
 #include <JuceHeader.h>
 #include <cmath>
 #include "DOrganSound.h"
+#include "MCP3008.h"
 
 class DOrganVoice : public SynthesiserVoice
 {
