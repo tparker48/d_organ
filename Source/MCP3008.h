@@ -36,7 +36,6 @@ namespace JUCE_GPIO
   class MCP3008
   {
     public:
-      MCP3008();
       void clocked_write(int clockpin, int out, int value);
       int clocked_read(int clockpin, int in);
       void mcp3008_select_chip(int bin[], int inputnum);
