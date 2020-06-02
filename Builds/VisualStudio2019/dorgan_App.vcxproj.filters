@@ -412,6 +412,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\PotReader.cpp">
+      <Filter>dorgan\Source</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\MCP3008.cpp">
       <Filter>dorgan\Source</Filter>
     </ClCompile>
@@ -2334,6 +2337,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\PotReader.h">
+      <Filter>dorgan\Source</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\MCP3008.h">
       <Filter>dorgan\Source</Filter>
     </ClInclude>

@@ -15,15 +15,17 @@ MainComponent::MainComponent()
         setAudioChannels(0, 1);
     }
 
+
+    knobs.start();
+
     dorgan.clearVoices();
-    dorgan.addVoice(new DOrganVoice(0));
-    dorgan.addVoice(new DOrganVoice(1));
-    dorgan.addVoice(new DOrganVoice(2));
-    dorgan.addVoice(new DOrganVoice(3));
+    dorgan.addVoice(new DOrganVoice(&knobs));
+    dorgan.addVoice(new DOrganVoice(&knobs));
+    dorgan.addVoice(new DOrganVoice(&knobs));
+    dorgan.addVoice(new DOrganVoice(&knobs));
 
     dorgan.clearSounds();
     dorgan.addSound(new DOrganSound());
-    
 }
 
 void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate)
@@ -33,7 +35,6 @@ void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate
 
 void MainComponent::getNextAudioBlock(const AudioSourceChannelInfo& bufferToFill)
 {
-    //dorgan.noteOn(1, 1, 0.0);
     dorgan.renderNextBlock(*(bufferToFill.buffer), trash, bufferToFill.startSample, bufferToFill.numSamples);
 }
 
