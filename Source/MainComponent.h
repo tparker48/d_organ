@@ -22,7 +22,7 @@ private:
     Synthesiser dorgan;
     const MidiBuffer trash;
 
-    PotReader knobs;
+    PotReader* knobs;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(MainComponent)
 };

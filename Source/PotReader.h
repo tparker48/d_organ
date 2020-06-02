@@ -30,9 +30,8 @@ private:
 	// because of the application, no synchronization is required
 	int potValues[8*4];
 	std::thread* updater;
-	JUCE_GPIO::MCP3008 mcpReader;
 	bool killThread;
 };
 
-void updateValues(int vals[4 * 8], bool *killSignal);
+void updateValues(int *vals, bool *killSignal);
 int getIndex(int mcp, int pot);

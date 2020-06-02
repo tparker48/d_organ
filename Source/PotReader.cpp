@@ -1,10 +1,10 @@
 #include "PotReader.h"
 #include <thread>
-//#include <unistd.h>      only works on the PI itself (UNIX)
+#include <iostream>
+#include <unistd.h>      //only works on the PI itself (UNIX)
 
 	PotReader::PotReader()
 	{
-		// create a new thread for the updateValues function
 		killThread = false;
 	}
 
@@ -38,11 +38,10 @@
 	}
 
 
-	void updateValues(int vals[4*8], bool* killSignal)
+	void updateValues(int *vals, bool* killSignal)
 	{
 		JUCE_GPIO::MCP3008 mcp;
-
-		while (!killSignal)
+		while (!(*killSignal))
 		{
 			vals[getIndex(0, 0)] = mcp.mcp3008_value(0, 11, 9, 10, 8);
 			vals[getIndex(0, 1)] = mcp.mcp3008_value(1, 11, 9, 10, 8);
@@ -80,7 +79,7 @@
 			//vals[getIndex(1, 6)] = mcp.mcp3008_value(6, 11, 9, 10, 4th PIN HERE);
 			//vals[getIndex(1, 7)] = mcp.mcp3008_value(7, 11, 9, 10, 4th PIN HERE);
 
-			//usleep(11609);     ONLY WORKS ON PI (UNIX)
+			usleep(11609);     //ONLY WORKS ON PI (UNIX)
 		}
 	}
 

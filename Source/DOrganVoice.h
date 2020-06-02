@@ -20,7 +20,7 @@ public:
 
     void renderNextBlock(AudioBuffer<float>& outputBuffer, int startSample, int numSamples)
     {
-            
+        std::cout << knobs->read(0,0) <<"    " << knobs->read(0,1) <<  std::endl;
         for (int sample = startSample; sample < numSamples; sample++)
         {
             for (int channel = 0; channel < outputBuffer.getNumChannels(); channel++)

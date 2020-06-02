@@ -15,14 +15,14 @@ MainComponent::MainComponent()
         setAudioChannels(0, 1);
     }
 
-
-    knobs.start();
+    knobs = new PotReader();
+    knobs->start();
 
     dorgan.clearVoices();
-    dorgan.addVoice(new DOrganVoice(&knobs));
-    dorgan.addVoice(new DOrganVoice(&knobs));
-    dorgan.addVoice(new DOrganVoice(&knobs));
-    dorgan.addVoice(new DOrganVoice(&knobs));
+    dorgan.addVoice(new DOrganVoice(knobs));
+    //dorgan.addVoice(new DOrganVoice(knobs));
+    //dorgan.addVoice(new DOrganVoice(knobs));
+    //dorgan.addVoice(new DOrganVoice(knobs));
 
     dorgan.clearSounds();
     dorgan.addSound(new DOrganSound());
