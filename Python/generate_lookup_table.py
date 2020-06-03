@@ -13,3 +13,4 @@ for i in range(1024):
     file.write(str(lookup[i]) + comma)
 
 file.write('};')
+file.close();
