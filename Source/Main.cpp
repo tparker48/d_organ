@@ -29,9 +29,6 @@ public:
     {
     }
 
-
-
-
     class MainWindow    : public DocumentWindow
     {
     public:
