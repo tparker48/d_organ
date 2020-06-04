@@ -10,17 +10,18 @@ public:
     
     DOrganVoice(PotReader* knobs)
     {
-        this->knobs = knobs;
+        theta = 0.0f;
+        frequency = 440.0f;
+        
+        twoPi = 2.0f * MathConstants<float>::pi;
+        secondsPerSample = 1.0f / 44100.0f;
+        delta = frequency * secondsPerSample * twoPi;
 
-        frequency = 440.0;
-        float secondsPerSample = 1.0 / 44100.0;
-        delta = frequency * secondsPerSample * 2.0f * MathConstants<float>::pi;
-        theta = 0.0;
+        this->knobs = knobs;
     }
 
     void renderNextBlock(AudioBuffer<float>& outputBuffer, int startSample, int numSamples)
     {
-        std::cout << knobs->read(0,0) <<"    " << knobs->read(0,1) <<  std::endl;
         for (int sample = startSample; sample < numSamples; sample++)
         {
             for (int channel = 0; channel < outputBuffer.getNumChannels(); channel++)
@@ -28,13 +29,16 @@ public:
                 outputBuffer.addSample(channel, sample, std::sin(theta));
                 
             }
-            
-            theta += delta;
-            if(theta >= 2.0f * MathConstants<float>::pi)
-            {
-                theta -= 2.0f * MathConstants<float>::pi;
-            }
- 
+            updateDelta();
+        }
+    }
+    
+    void updateDelta()
+    {
+        theta += delta;
+        if(theta >= twoPi)
+        {
+            theta -= twoPi;
         }
     }
     
@@ -48,6 +52,7 @@ public:
 private:
     float frequency;
     float theta, delta;
+    float twoPi, secondsPerSample;
 
     PotReader* knobs;
 };

@@ -20,9 +20,6 @@ MainComponent::MainComponent()
 
     dorgan.clearVoices();
     dorgan.addVoice(new DOrganVoice(knobs));
-    //dorgan.addVoice(new DOrganVoice(knobs));
-    //dorgan.addVoice(new DOrganVoice(knobs));
-    //dorgan.addVoice(new DOrganVoice(knobs));
 
     dorgan.clearSounds();
     dorgan.addSound(new DOrganSound());
@@ -38,7 +35,12 @@ void MainComponent::getNextAudioBlock(const AudioSourceChannelInfo& bufferToFill
     dorgan.renderNextBlock(*(bufferToFill.buffer), trash, bufferToFill.startSample, bufferToFill.numSamples);
 }
 
-MainComponent::~MainComponent() {shutdownAudio();}
+MainComponent::~MainComponent() 
+{
+    knobs->stop();
+    shutdownAudio();
+}
+
 void MainComponent::releaseResources() {}
 void MainComponent::paint(Graphics& g) {}
 void MainComponent::resized() {}

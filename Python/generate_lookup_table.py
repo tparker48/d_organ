@@ -1,6 +1,6 @@
 file = open("Linear to Logarithmic Lookup Table.txt",'w')
-file.write('\\\\ This auto-generated file provides a lookup table for converting the linear potentiometer readings to a logarithmic scale\n')
-file.write('int lin2log[1024] = {\n')
+file.write('// This auto-generated file provides a lookup table for converting the linear potentiometer readings to a logarithmic scale\n')
+file.write('float lin2log[1024] = {\n')
 
 comma = ','
 
@@ -10,7 +10,7 @@ for i in range(1024):
     print(lookup[i])
     if(i==1023):
         comma = ''
-    file.write(str(lookup[i]) + comma)
+    file.write(str(lookup[i]) + 'f' + comma)
 
 file.write('};')
 file.close()

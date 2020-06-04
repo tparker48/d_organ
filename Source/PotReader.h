@@ -1,5 +1,4 @@
 #pragma once
-#include "MCP3008.h"
 #include <thread>
 
 // The PotReader Clas ("Potentiometer Reader") is tasked with keeping track of the potentiometer values
@@ -8,29 +7,23 @@
 class PotReader
 {
 public:
-	PotReader();
-	~PotReader();
-
-	//starts the new thread which updates the pot values
+	// Must be called before reading
 	void start();
+	void stop();
 
-	// Get the raw integer value [0-1024]
+	// Get the raw integer value [0-1023]
 	int read(int mcp, int pot);
 
 	// Get the value as a float [0.0-1.0]
 	float readNormalized(int mcp, int pot);
 
-	// Get the value as a float [0.0-1.0] as if the pot were logarithmic
-	// The pots we are using are all linear
-	// Usefull for things like filter frequency cutoff ETC
+	// Get the value as a float [0.0-1.0] on a logarithmic scale
 	float readLogarithmic(int mcp, int pot);
 
 private:
-	// potValues is frequently read from and written to
-	// because of the application, no synchronization is required
-	int potValues[8*4];
-	std::thread* updater;
+	int potValues[4*8];
 	bool killThread;
+	std::thread* updater;
 };
 
 void updateValues(int *vals, bool *killSignal);
