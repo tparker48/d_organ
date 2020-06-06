@@ -138,6 +138,7 @@
     <Lib/>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\SampleData\osc1Samples.cpp"/>
     <ClCompile Include="..\..\Source\PotReader.cpp"/>
     <ClCompile Include="..\..\Source\MCP3008.cpp"/>
     <ClCompile Include="..\..\Source\GPIO.cpp"/>

@@ -2,6 +2,9 @@
 
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="dorgan\Source\SampleData">
+      <UniqueIdentifier>{0565F215-BEC6-5195-C624-AF3E6B8A0AC2}</UniqueIdentifier>
+    </Filter>
     <Filter Include="dorgan\Source">
       <UniqueIdentifier>{5A5EFC6D-02AF-3DF6-27E0-CA35AC00B9ED}</UniqueIdentifier>
     </Filter>
@@ -412,6 +415,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\SampleData\osc1Samples.cpp">
+      <Filter>dorgan\Source\SampleData</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\PotReader.cpp">
       <Filter>dorgan\Source</Filter>
     </ClCompile>
