@@ -37,7 +37,7 @@ f = open("..\\Source\\SampleData\\osc1Samples.cpp",'w')
 for i in range(len(samples)):
     f.write("float osc1"+names[i]+"[] = {")
     for s in range(startStop[i][0],startStop[i][1]+1):
-        if i != startStop[i][1]:
+        if s != startStop[i][1]:
             f.write('{0:.8f}'.format(samples[i][s])+",")
         else:
             f.write('{0:.8f}'.format(samples[i][s]))
