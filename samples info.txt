@@ -1,3 +1,6 @@
+samples are 44.1 kHz 24 bit 2 channel
+audio playback device MUST be 44.1 kHz
+
 osc1:
 Lo  :   P_11_Pre1_F0_RR1.wav:  [205702-608161]    @ 87.307 hz
 Mid :   K_59_Pre1_F2_RR1.wav:  [188987-558744]    @ 349.228 hz
