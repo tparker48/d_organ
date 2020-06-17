@@ -2,9 +2,6 @@
 
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="dorgan\Source\SampleData">
-      <UniqueIdentifier>{0565F215-BEC6-5195-C624-AF3E6B8A0AC2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="dorgan\Source">
       <UniqueIdentifier>{5A5EFC6D-02AF-3DF6-27E0-CA35AC00B9ED}</UniqueIdentifier>
     </Filter>
@@ -415,22 +412,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\SampleData\osc1Samples.cpp">
-      <Filter>dorgan\Source\SampleData</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\PotReader.cpp">
-      <Filter>dorgan\Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\MCP3008.cpp">
-      <Filter>dorgan\Source</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\GPIO.cpp">
+      <Filter>dorgan\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Main.cpp">
       <Filter>dorgan\Source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\MainComponent.cpp">
       <Filter>dorgan\Source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\Main.cpp">
+    <ClCompile Include="..\..\Source\MCP3008.cpp">
+      <Filter>dorgan\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PotReader.cpp">
       <Filter>dorgan\Source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\..\JUCE\modules\juce_audio_basics\buffers\juce_AudioChannelSet.cpp">
@@ -2343,22 +2337,22 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\PotReader.h">
-      <Filter>dorgan\Source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\MCP3008.h">
-      <Filter>dorgan\Source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\GPIO.h">
-      <Filter>dorgan\Source</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\DOrganSound.h">
       <Filter>dorgan\Source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\DOrganVoice.h">
       <Filter>dorgan\Source</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\GPIO.h">
+      <Filter>dorgan\Source</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\MainComponent.h">
+      <Filter>dorgan\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\MCP3008.h">
+      <Filter>dorgan\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PotReader.h">
       <Filter>dorgan\Source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\..\JUCE\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.h">
