@@ -412,6 +412,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\OrganOsc.cpp">
+      <Filter>dorgan\Source</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\GPIO.cpp">
       <Filter>dorgan\Source</Filter>
     </ClCompile>
@@ -2337,10 +2340,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\DOrganSound.h">
+    <ClInclude Include="..\..\Source\OrganOsc.h">
       <Filter>dorgan\Source</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\DOrganVoice.h">
+    <ClInclude Include="..\..\Source\DOrganSound.h">
       <Filter>dorgan\Source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\GPIO.h">

@@ -2,7 +2,7 @@
 
 #include <JuceHeader.h>
 #include "DOrganSound.h"
-#include "DOrganVoice.h"
+#include "OrganOsc.h"
 #include "PotReader.h"
 
 class MainComponent : public AudioAppComponent
@@ -23,6 +23,7 @@ private:
     const MidiBuffer trash;
 
     PotReader* knobs;
+    AudioBuffer<float> audio;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(MainComponent)
 };

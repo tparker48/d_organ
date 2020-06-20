@@ -3,8 +3,9 @@
 <JUCERPROJECT id="svZ23X" name="dorgan" projectType="guiapp" jucerVersion="5.4.7">
   <MAINGROUP id="qLKBCm" name="dorgan">
     <GROUP id="{B98F0AB2-4D5B-FD20-ADBA-003D0D55F07F}" name="Source">
+      <FILE id="RSkM1S" name="OrganOsc.cpp" compile="1" resource="0" file="Source/OrganOsc.cpp"/>
+      <FILE id="B3o12Z" name="OrganOsc.h" compile="0" resource="0" file="Source/OrganOsc.h"/>
       <FILE id="jGjFWh" name="DOrganSound.h" compile="0" resource="0" file="Source/DOrganSound.h"/>
-      <FILE id="zhLs3H" name="DOrganVoice.h" compile="0" resource="0" file="Source/DOrganVoice.h"/>
       <FILE id="hsTpdN" name="GPIO.cpp" compile="1" resource="0" file="Source/GPIO.cpp"/>
       <FILE id="emhfJb" name="GPIO.h" compile="0" resource="0" file="Source/GPIO.h"/>
       <FILE id="ZYbF8V" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>

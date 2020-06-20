@@ -138,6 +138,7 @@
     <Lib/>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\OrganOsc.cpp"/>
     <ClCompile Include="..\..\Source\GPIO.cpp"/>
     <ClCompile Include="..\..\Source\Main.cpp"/>
     <ClCompile Include="..\..\Source\MainComponent.cpp"/>
@@ -1910,8 +1911,8 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_opengl.cpp"/>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\OrganOsc.h"/>
     <ClInclude Include="..\..\Source\DOrganSound.h"/>
-    <ClInclude Include="..\..\Source\DOrganVoice.h"/>
     <ClInclude Include="..\..\Source\GPIO.h"/>
     <ClInclude Include="..\..\Source\MainComponent.h"/>
     <ClInclude Include="..\..\Source\MCP3008.h"/>

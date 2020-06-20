@@ -1,5 +1,8 @@
 #include "MainComponent.h"
 
+#define WINFILE "C:\\Users\\Tom\\Desktop\\synthProject\\TownHallOrgan_SP\\TownHallOrgan_SP\\Samples\\PRE1\\P_11_Pre1_F0_RR1.wav"
+#define RPIFILE "~/Desktop/d_organ/organ samples/1/P_11_Pre1_F0_RR1.wav"
+
 MainComponent::MainComponent()
 {
     setSize(1, 1);
@@ -19,7 +22,20 @@ MainComponent::MainComponent()
     knobs->start();
 
     dorgan.clearVoices();
-    dorgan.addVoice(new DOrganVoice(knobs));
+
+    AudioFormatManager formatManager;
+    formatManager.registerBasicFormats();
+
+    int startSampleLo = 205702;
+    int endSampleLo = 608161;
+    int windowSizeLo = endSampleLo - startSampleLo + 1;
+
+    AudioFormatReader* reader = formatManager.createReaderFor(File(WINFILE));
+    audio.setSize(1, windowSizeLo, false, true, false);
+    reader->read(&audio, 0, windowSizeLo, startSampleLo, true, true);
+    delete reader;
+    float baseFreq = 87.307;
+    dorgan.addVoice(new OrganOsc(&audio, baseFreq, 0, knobs));
 
     dorgan.clearSounds();
     dorgan.addSound(new DOrganSound());
