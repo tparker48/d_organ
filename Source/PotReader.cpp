@@ -58,23 +58,23 @@ void updateValues(int *vals, bool* killSignal)
 		vals[getIndex(1, 6)] = mcp.mcp3008_value(6, 11, 9, 10, 23);
 		vals[getIndex(1, 7)] = mcp.mcp3008_value(7, 11, 9, 10, 23);
 
-		vals[getIndex(1, 0)] = mcp.mcp3008_value(0, 11, 9, 10, 25);
-		vals[getIndex(1, 1)] = mcp.mcp3008_value(1, 11, 9, 10, 25);
-		vals[getIndex(1, 2)] = mcp.mcp3008_value(2, 11, 9, 10, 25);
-		vals[getIndex(1, 3)] = mcp.mcp3008_value(3, 11, 9, 10, 25);
-		vals[getIndex(1, 4)] = mcp.mcp3008_value(4, 11, 9, 10, 25);
-		vals[getIndex(1, 5)] = mcp.mcp3008_value(5, 11, 9, 10, 25);
-		vals[getIndex(1, 6)] = mcp.mcp3008_value(6, 11, 9, 10, 25);
-		vals[getIndex(1, 7)] = mcp.mcp3008_value(7, 11, 9, 10, 25);
+		vals[getIndex(2, 0)] = mcp.mcp3008_value(0, 11, 9, 10, 25);
+		vals[getIndex(2, 1)] = mcp.mcp3008_value(1, 11, 9, 10, 25);
+		vals[getIndex(2, 2)] = mcp.mcp3008_value(2, 11, 9, 10, 25);
+		vals[getIndex(2, 3)] = mcp.mcp3008_value(3, 11, 9, 10, 25);
+		vals[getIndex(2, 4)] = mcp.mcp3008_value(4, 11, 9, 10, 25);
+		vals[getIndex(2, 5)] = mcp.mcp3008_value(5, 11, 9, 10, 25);
+		vals[getIndex(2, 6)] = mcp.mcp3008_value(6, 11, 9, 10, 25);
+		vals[getIndex(2, 7)] = mcp.mcp3008_value(7, 11, 9, 10, 25);
 
-		//vals[getIndex(1, 0)] = mcp.mcp3008_value(0, 11, 9, 10, 4th PIN HERE);
-		//vals[getIndex(1, 1)] = mcp.mcp3008_value(1, 11, 9, 10, 4th PIN HERE);
-		//vals[getIndex(1, 2)] = mcp.mcp3008_value(2, 11, 9, 10, 4th PIN HERE);
-		//vals[getIndex(1, 3)] = mcp.mcp3008_value(3, 11, 9, 10, 4th PIN HERE);
-		//vals[getIndex(1, 4)] = mcp.mcp3008_value(4, 11, 9, 10, 4th PIN HERE);
-		//vals[getIndex(1, 5)] = mcp.mcp3008_value(5, 11, 9, 10, 4th PIN HERE);
-		//vals[getIndex(1, 6)] = mcp.mcp3008_value(6, 11, 9, 10, 4th PIN HERE);
-		//vals[getIndex(1, 7)] = mcp.mcp3008_value(7, 11, 9, 10, 4th PIN HERE);
+		//vals[getIndex(3, 0)] = mcp.mcp3008_value(0, 11, 9, 10, 4th PIN HERE);
+		//vals[getIndex(3, 1)] = mcp.mcp3008_value(1, 11, 9, 10, 4th PIN HERE);
+		//vals[getIndex(3, 2)] = mcp.mcp3008_value(2, 11, 9, 10, 4th PIN HERE);
+		//vals[getIndex(3, 3)] = mcp.mcp3008_value(3, 11, 9, 10, 4th PIN HERE);
+		//vals[getIndex(3, 4)] = mcp.mcp3008_value(4, 11, 9, 10, 4th PIN HERE);
+		//vals[getIndex(3, 5)] = mcp.mcp3008_value(5, 11, 9, 10, 4th PIN HERE);
+		//vals[getIndex(3, 6)] = mcp.mcp3008_value(6, 11, 9, 10, 4th PIN HERE);
+		//vals[getIndex(3, 7)] = mcp.mcp3008_value(7, 11, 9, 10, 4th PIN HERE);
 
 		//usleep(11609);     //ONLY WORKS ON PI (UNIX)
 	}

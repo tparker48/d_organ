@@ -23,7 +23,9 @@ private:
     const MidiBuffer trash;
 
     PotReader* knobs;
-    AudioBuffer<float> audio;
+    AudioBuffer<float> audioLo,audioHi;
+    
+    IIRFilter filter;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(MainComponent)
 };

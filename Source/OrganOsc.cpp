@@ -2,8 +2,8 @@
 
 #include "OrganOsc.h"
 
-const float freqMins[] = { 40.0, 120.0, 120.0, 120.0 };
-const float freqRanges[] = { 150.0, 700.0, 700.0, 1200.0 };
+const float freqMins[] = { 40.0, 750.0, 120.0, 120.0 };
+const float freqRanges[] = { 150.0, 1950.0, 600.0, 1200.0 };
 const int freqMCPs[] = { 0,0,0,0 };
 const int freqPots[] = { 0,1,2,3 };
 const int gainMCPs[] = { 1,1,1,1 };
@@ -31,10 +31,11 @@ void OrganOsc::renderNextBlock(AudioBuffer<float>& outputBuffer, int startSample
     increment = getFrequency() / baseFreq;
     int sampleIndex;
     float samp;
+    float gain = getGain();
     for (int sample = startSample; sample < numSamples; sample++)
     {
         sampleIndex = floor(increment * sample);
-        samp = getGain() * audioBuffer->getSample(0, (sampleIndex + offset) % audioBuffer->getNumSamples());
+        samp = gain * audioBuffer->getSample(0, (sampleIndex + offset) % audioBuffer->getNumSamples());
 
         outputBuffer.addSample(0, startSample + sample, samp);
     }
