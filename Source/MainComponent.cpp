@@ -32,8 +32,8 @@ MainComponent::MainComponent()
     formatManager.registerBasicFormats();
     AudioFormatReader* reader;
 
-    //std::string root = RPI_PATH;
-    std::string root = WIN_PATH;
+    std::string root = RPI_PATH;
+    //std::string root = WIN_PATH;
     std::string path[4] = { root + OSC1, root + OSC2, root + OSC3, root + OSC4 };
 
     int startSample[4] = {186678, 187455, 189156, 188332};
