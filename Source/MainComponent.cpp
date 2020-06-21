@@ -1,8 +1,12 @@
 #include "MainComponent.h"
 
-#define WINFILE_LO "C:\\Users\\Tom\\Desktop\\synthProject\\TownHallOrgan_SP\\TownHallOrgan_SP\\Samples\\PRE1\\P_11_Pre1_F0_RR1.wav"
-#define RPIFILE_LO "~/Desktop/d_organ/organ samples/1/P_11_Pre1_F0_RR1.wav"
-#define RPIFILE_HI "~/Desktop/d_organ/organ samples/1/K_107_Pre1_F4_RR1.wav"
+#define WIN_PATH "C:\\Users\\Tom\\Documents\\d_organ\\samples\\"
+#define RPI_PATH "~/Desktop/d_organ/samples/"
+
+#define OSC1 "OSC1.wav"
+#define OSC2 "OSC2.wav"
+#define OSC3 "OSC3.wav"
+#define OSC4 "OSC4.wav"
 
 MainComponent::MainComponent()
 {
@@ -26,30 +30,33 @@ MainComponent::MainComponent()
 
     AudioFormatManager formatManager;
     formatManager.registerBasicFormats();
+    AudioFormatReader* reader;
 
-    int startSampleLo = 205702;
-    int endSampleLo = 608161;
-    int windowSizeLo = endSampleLo - startSampleLo + 1;
+    //std::string root = RPI_PATH;
+    std::string root = WIN_PATH;
+    std::string path[4] = { root + OSC1, root + OSC2, root + OSC3, root + OSC4 };
 
-    AudioFormatReader* reader = formatManager.createReaderFor(File(RPIFILE_LO));
-    audioLo.setSize(1, windowSizeLo, false, true, false);
-    reader->read(&audioLo, 0, windowSizeLo, startSampleLo, true, true);
-    delete reader;
-    float baseFreq = 87.307;
-    dorgan.addVoice(new OrganOsc(&audioLo, baseFreq, 0, knobs));
+    int startSample[4] = {186678, 187455, 189156, 188332};
+    int endSample[4] = {551178, 551954, 559243, 552831};
+    int windowSize;
+
+    float baseFreq[4] = { 32.7f, 233.08f, 185.0f, 493.88f };
     
-    int startSampleHi = 195046;
-    int endSampleHi = 576658;
-    int windowSizeHi = endSampleHi - startSampleHi + 1;
+    for (int i = 0; i < 4; i++)
+    {
+        // Compute length of audio, initialize the sample buffer
+        windowSize = endSample[i] - startSample[i];
+        oscAudio[i].setSize(1, windowSize, false, true, false);
 
-    reader = formatManager.createReaderFor(File(RPIFILE_HI));
-    audioHi.setSize(1, windowSizeHi, false, true, false);
-    reader->read(&audioHi, 0, windowSizeHi, startSampleHi, true, true);
-    delete reader;
-    baseFreq = 1396.913;
-    dorgan.addVoice(new OrganOsc(&audioHi, baseFreq, 1, knobs));
-    dorgan.addVoice(new OrganOsc(&audioHi, baseFreq, 2, knobs));
-    
+        // Read the wav file and fill the sample buffer
+        reader = formatManager.createReaderFor(File( path[i] ));
+        reader->read(&(oscAudio[i]), 0, windowSize, startSample[i], true, true);
+        delete reader;
+
+        // Instantiate the oscillator voice
+        dorgan.addVoice(new OrganOsc(&oscAudio[i], baseFreq[i], i, knobs));
+    }
+
     dorgan.clearSounds();
     dorgan.addSound(new DOrganSound());
 }
@@ -57,13 +64,12 @@ MainComponent::MainComponent()
 void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate)
 {
     dorgan.setCurrentPlaybackSampleRate(sampleRate);
-    std::cout << sampleRate << std::endl;
 }
 
 void MainComponent::getNextAudioBlock(const AudioSourceChannelInfo& bufferToFill)
 {
     dorgan.renderNextBlock(*(bufferToFill.buffer), trash, bufferToFill.startSample, bufferToFill.numSamples);
-    filter.setCoefficients(IIRCoefficients::makeLowPass(44100, 100.0 + knobs->readNormalized(0,3)*2500.0));
+    filter.setCoefficients(IIRCoefficients::makeLowPass(44100, 100.0 + knobs->readNormalized(1,4)*2500.0));
     filter.processSamples(bufferToFill.buffer->getWritePointer(0,0),bufferToFill.numSamples);
 }
 

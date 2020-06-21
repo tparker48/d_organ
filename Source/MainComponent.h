@@ -23,7 +23,7 @@ private:
     const MidiBuffer trash;
 
     PotReader* knobs;
-    AudioBuffer<float> audioLo,audioHi;
+    AudioBuffer<float> oscAudio[4];
     
     IIRFilter filter;
 
