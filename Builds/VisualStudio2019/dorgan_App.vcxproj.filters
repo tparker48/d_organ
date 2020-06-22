@@ -2340,6 +2340,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\PreprocessorDefinitions.h">
+      <Filter>dorgan\Source</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\OrganOsc.h">
       <Filter>dorgan\Source</Filter>
     </ClInclude>

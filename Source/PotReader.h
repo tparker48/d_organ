@@ -8,7 +8,7 @@ class PotReader
 {
 public:
 	// Must be called before reading
-	void start();
+	void start(bool isMockReader);
 	void stop();
 
 	// Get the raw integer value [0-1023]
@@ -22,9 +22,10 @@ public:
 
 private:
 	int potValues[4*8];
-	bool killThread;
+	bool killThread, isMockReader;
 	std::thread* updater;
 };
 
 void updateValues(int *vals, bool *killSignal);
+void initializeMockValues(int* vals);
 int getIndex(int mcp, int pot);

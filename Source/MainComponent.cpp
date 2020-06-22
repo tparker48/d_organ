@@ -1,12 +1,13 @@
 #include "MainComponent.h"
+#include "PreprocessorDefinitions.h"
 
-#define WIN_PATH "C:\\Users\\Tom\\Documents\\d_organ\\samples\\"
-#define RPI_PATH "~/Desktop/d_organ/samples/"
+#ifdef RUNNING_WINDOWS "Windows"
+const std::string MODE = WINDOWS;
+#endif
 
-#define OSC1 "OSC1.wav"
-#define OSC2 "OSC2.wav"
-#define OSC3 "OSC3.wav"
-#define OSC4 "OSC4.wav"
+#ifdef RUNNING_RPI
+const std::string MODE = RPI;
+#endif
 
 MainComponent::MainComponent()
 {
@@ -24,7 +25,7 @@ MainComponent::MainComponent()
     }
 
     knobs = new PotReader();
-    knobs->start();
+    knobs->start(MODE == WINDOWS);
 
     dorgan.clearVoices();
 
@@ -32,8 +33,13 @@ MainComponent::MainComponent()
     formatManager.registerBasicFormats();
     AudioFormatReader* reader;
 
-    std::string root = RPI_PATH;
-    //std::string root = WIN_PATH;
+    std::string root;
+    if (MODE == RPI) root = RPI_PATH;
+    else if (MODE == WINDOWS)
+    {
+        root = WIN_PATH;
+    }
+    
     std::string path[4] = { root + OSC1, root + OSC2, root + OSC3, root + OSC4 };
 
     int startSample[4] = {186678, 187455, 189156, 188332};

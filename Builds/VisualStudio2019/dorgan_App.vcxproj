@@ -1911,6 +1911,7 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_opengl.cpp"/>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\PreprocessorDefinitions.h"/>
     <ClInclude Include="..\..\Source\OrganOsc.h"/>
     <ClInclude Include="..\..\Source\DOrganSound.h"/>
     <ClInclude Include="..\..\Source\GPIO.h"/>
