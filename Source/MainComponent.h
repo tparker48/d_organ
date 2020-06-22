@@ -4,6 +4,15 @@
 #include "DOrganSound.h"
 #include "OrganOsc.h"
 #include "PotReader.h"
+#include "PreprocessorDefinitions.h"
+
+#ifdef RUNNING_WINDOWS
+const std::string MODE = WINDOWS;
+#endif
+
+#ifdef RUNNING_RPI
+const std::string MODE = RPI;
+#endif
 
 class MainComponent : public AudioAppComponent
 {

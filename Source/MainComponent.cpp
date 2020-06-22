@@ -1,13 +1,4 @@
 #include "MainComponent.h"
-#include "PreprocessorDefinitions.h"
-
-#ifdef RUNNING_WINDOWS "Windows"
-const std::string MODE = WINDOWS;
-#endif
-
-#ifdef RUNNING_RPI
-const std::string MODE = RPI;
-#endif
 
 MainComponent::MainComponent()
 {
