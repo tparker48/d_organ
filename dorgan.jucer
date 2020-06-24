@@ -5,6 +5,10 @@
     <GROUP id="{B98F0AB2-4D5B-FD20-ADBA-003D0D55F07F}" name="Source">
       <FILE id="ZqAvt1" name="PreprocessorDefinitions.h" compile="0" resource="0"
             file="Source/PreprocessorDefinitions.h"/>
+      <FILE id="MsxDiI" name="StilsonMoogFilter.cpp" compile="1" resource="0"
+            file="Source/StilsonMoogFilter.cpp"/>
+      <FILE id="rHdeRo" name="StilsonMoogFilter.h" compile="0" resource="0"
+            file="Source/StilsonMoogFilter.h"/>
       <FILE id="RSkM1S" name="OrganOsc.cpp" compile="1" resource="0" file="Source/OrganOsc.cpp"/>
       <FILE id="B3o12Z" name="OrganOsc.h" compile="0" resource="0" file="Source/OrganOsc.h"/>
       <FILE id="jGjFWh" name="DOrganSound.h" compile="0" resource="0" file="Source/DOrganSound.h"/>

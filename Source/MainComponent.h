@@ -3,6 +3,7 @@
 #include <JuceHeader.h>
 #include "DOrganSound.h"
 #include "OrganOsc.h"
+#include "StilsonMoogFilter.h"
 #include "PotReader.h"
 #include "PreprocessorDefinitions.h"
 
@@ -34,7 +35,7 @@ private:
     PotReader* knobs;
     AudioBuffer<float> oscAudio[4];
     
-    IIRFilter filter;
+    StilsonMoogFilter moogFilter;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(MainComponent)
 };
