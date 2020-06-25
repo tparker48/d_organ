@@ -22,7 +22,6 @@ OrganOsc::OrganOsc(AudioBuffer<float>* audio, float baseFreq,int oscID,PotReader
     this->knobs = knobs;
 
     output.buffer = &outBuffer;
-    output.buffer->setSize(1, 1024, false, false, false);
 
     freqMin = freqMins[oscID];
     freqRange = freqRanges[oscID];
