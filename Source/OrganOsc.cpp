@@ -21,6 +21,9 @@ OrganOsc::OrganOsc(AudioBuffer<float>* audio, float baseFreq,int oscID,PotReader
     this->baseFreq = baseFreq;
     this->knobs = knobs;
 
+    output.buffer = &outBuffer;
+    output.buffer->setSize(1, 1024, false, false, false);
+
     freqMin = freqMins[oscID];
     freqRange = freqRanges[oscID];
     freqMCP = freqMCPs[oscID];
@@ -48,16 +51,24 @@ void OrganOsc::renderNextBlock(AudioBuffer<float>& outputBuffer, int startSample
     int sampleIndex;
     float samp;
     float gain = getGain();
-    for (int sample = startSample; sample < numSamples; sample++)
+
+    if (output.buffer->getNumSamples() < numSamples) output.buffer->setSize(1, numSamples, false, false, true);
+
+    for (int sample = 0; sample < numSamples; sample++)
     {
         sampleIndex = floor(increment * sample);
         samp = gain * audioBuffer->getSample(0, (sampleIndex + offset) % audioBuffer->getNumSamples());
 
-        outputBuffer.addSample(0, startSample + sample, samp);
+        output.buffer->setSample(0, sample, samp);
     }
 
     updateFilter();
-    filter.processBlock(AudioSourceChannelInfo(outputBuffer), filterMode);
+    filter.processBlock(output, filterMode);
+
+    for (int sample = 0; sample < numSamples; sample++)
+    {
+        outputBuffer.addSample(0, sample + startSample, output.buffer->getSample(0, sample));
+    }
 
     offset += floor(increment * numSamples);
     offset %= audioBuffer->getNumSamples();

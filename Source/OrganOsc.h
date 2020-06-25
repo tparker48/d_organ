@@ -23,7 +23,8 @@ private:
     float getGain();
     void updateFilter();
 
-    AudioBuffer<float>* audioBuffer;
+    AudioBuffer<float>* audioBuffer, outBuffer;
+    AudioSourceChannelInfo output;
     StilsonMoogFilter filter;
     PotReader* knobs;
 
