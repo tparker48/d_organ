@@ -2,6 +2,7 @@
 #include <JuceHeader.h>
 #include "DOrganSound.h"
 #include "PotReader.h"
+#include "StilsonMoogFilter.h"
 
 class OrganOsc : public SynthesiserVoice
 {
@@ -20,13 +21,17 @@ public:
 private:
     float getFrequency();
     float getGain();
+    void updateFilter();
 
     AudioBuffer<float>* audioBuffer;
+    StilsonMoogFilter filter;
     PotReader* knobs;
 
     float baseFreq;
     float freqMin, freqRange;
     int freqMCP, gainMCP, freqPot, gainPot;
+    int filterCutoffMCP, filterCutoffPot, filterResonanceMCP, filterResonancePot;
+    int filterMode;
     
     int offset;
     float increment;
