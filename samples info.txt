@@ -1,4 +1,8 @@
 K_71_Pre5_B2_RR1    "OSC4.wav"     @ 493.88 Base Hz    START 188332  END 552831
 P_37_Pre4_F#1_RR1   "OSC3.wav"     @ 185.00 Base Hz    START 189156  END 559243
 K_45_Pre5_A#1_RR1   "OSC2.wav"     @ 233.08 Base Hz    START 187455  END 551954
-P_2_Pre5_C0_RR2     "OSC1.wav"     @ 32.70  Base Hz    START 186678  END 551178
+P_4_Pre5_C#0_RR2    "OSC1.wav"     @ 34.65  Base Hz    START 191179  END 564427
+
+CANCELED P_2_Pre5_C0_RR2     "OSC1.wav"     @ 32.70  Base Hz    START 186678  END 551178
+
+

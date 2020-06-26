@@ -2,8 +2,8 @@
 
 #include "OrganOsc.h"
 
-const float freqMins[] = { 16.35, 116.54, 92.5, 246.94 };
-const float freqRanges[] = { 49.05, 349.62, 277.5, 740.7};
+const float freqMins[] = { 17.325, 116.54, 92.5, 246.94 };
+const float freqRanges[] = { 51.975, 349.62, 277.5, 740.7};
 
 const int freqMCPs[] = { 0,0,0,0 };
 const int freqPots[] = { 0,1,2,3 };

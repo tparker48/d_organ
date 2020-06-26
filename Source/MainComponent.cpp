@@ -33,11 +33,11 @@ MainComponent::MainComponent()
     
     std::string path[4] = { root + OSC1, root + OSC2, root + OSC3, root + OSC4 };
 
-    int startSample[4] = {186678, 187455, 189156, 188332};
-    int endSample[4] = {551178, 551954, 559243, 552831};
+    int startSample[4] = {191179, 187455, 189156, 188332};
+    int endSample[4] = {564427, 551954, 559243, 552831};
     int windowSize;
 
-    float baseFreq[4] = { 32.7f, 233.08f, 185.0f, 493.88f };
+    float baseFreq[4] = { 34.65f, 233.08f, 185.0f, 493.88f };
     
     for (int i = 0; i < 4; i++)
     {
