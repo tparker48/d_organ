@@ -68,7 +68,7 @@ void MainComponent::getNextAudioBlock(const AudioSourceChannelInfo& bufferToFill
 {
     dorgan.renderNextBlock(*(bufferToFill.buffer), trash, bufferToFill.startSample, bufferToFill.numSamples);
 
-    float cutoff = (50.0f + knobs->readLogarithmic(1,4)*20000.0f);
+    float cutoff = (350.0f + knobs->readLogarithmic(1,4)*20000.0f);
     float resonance = (knobs->readNormalized(1, 5));
     moogFilter.set(cutoff, resonance);
     moogFilter.processBlock(bufferToFill, LOWPASS);   
