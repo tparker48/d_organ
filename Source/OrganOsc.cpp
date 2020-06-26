@@ -15,6 +15,8 @@ const int filterCutoffPots[] = { 0,2,4,6 };
 const int filterResonanceMCPs[] = { 2,2,2,2 };
 const int filterResonancePots[] = { 1,3,5,7 };
 
+const int filterModes[] = {LOWPASS, LOWPASS, BANDPASS, HIGHPASS};
+
 OrganOsc::OrganOsc(AudioBuffer<float>* audio, float baseFreq,int oscID,PotReader* knobs)
 {
     audioBuffer = audio;
@@ -41,9 +43,7 @@ OrganOsc::OrganOsc(AudioBuffer<float>* audio, float baseFreq,int oscID,PotReader
     if(oscID == 0) gainMax = .6;
     else gainMax = .9;
 
-    if (oscID == 2 || oscID == 3) filterMode = BANDPASS;
-    else filterMode = LOWPASS;
-
+    filterMode = filterModes[oscID];
     filter.init((float)getSampleRate());
     filter.setSaturationAmount(.9f);
 }
