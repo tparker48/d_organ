@@ -2,6 +2,10 @@
 
 #include "OrganOsc.h"
 
+#define LOWPASS 0
+#define HIGHPASS 1
+#define BANDPASS 2
+
 const float freqMins[] = { 17.325, 116.54, 92.5, 246.94 };
 const float freqRanges[] = { 51.975, 349.62, 277.5, 740.7};
 
@@ -40,12 +44,11 @@ OrganOsc::OrganOsc(AudioBuffer<float>* audio, float baseFreq,int oscID,PotReader
     offset = 0;
     increment = 0.0;
 
-    if(oscID == 0) gainMax = .6;
-    else gainMax = .9;
+    if(oscID == 0) gainMax = 1.0;
+    else gainMax = 1.0;
 
     filterMode = filterModes[oscID];
     filter.init((float)getSampleRate());
-    filter.setSaturationAmount(.9f);
 }
 
 void OrganOsc::renderNextBlock(AudioBuffer<float>& outputBuffer, int startSample, int numSamples)
@@ -70,7 +73,7 @@ void OrganOsc::renderNextBlock(AudioBuffer<float>& outputBuffer, int startSample
     }
 
     updateFilter();
-    filter.processBlock(output, filterMode);
+    filter.processBlock(output);
 
     for (int sample = 0; sample < numSamples; sample++)
     {
@@ -93,6 +96,7 @@ float OrganOsc::getGain()
 
 void OrganOsc::updateFilter()
 {
-    filter.setCutoff(50.0f + 3500.0f*knobs->readLogarithmic(filterCutoffMCP,filterCutoffPot));
-    filter.setResonance(knobs->readNormalized(filterResonanceMCP, filterResonancePot));
+    float cutoff = 50.0f + 3500.0f * knobs->readLogarithmic(filterCutoffMCP, filterCutoffPot);
+    float resonance = knobs->readNormalized(filterResonanceMCP, filterResonancePot);
+    filter.set(cutoff, resonance);
 }
