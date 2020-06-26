@@ -2,10 +2,6 @@
 
 #include "OrganOsc.h"
 
-#define LOWPASS 0
-#define HIGHPASS 1
-#define BANDPASS 2
-
 const float freqMins[] = { 17.325, 116.54, 92.5, 246.94 };
 const float freqRanges[] = { 51.975, 349.62, 277.5, 740.7};
 
@@ -73,7 +69,7 @@ void OrganOsc::renderNextBlock(AudioBuffer<float>& outputBuffer, int startSample
     }
 
     updateFilter();
-    filter.processBlock(output);
+    filter.processBlock(output, filterMode);
 
     for (int sample = 0; sample < numSamples; sample++)
     {

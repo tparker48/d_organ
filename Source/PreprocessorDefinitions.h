@@ -1,5 +1,5 @@
-//#define RUNNING_WINDOWS
-#define RUNNING_RPI
+#define RUNNING_WINDOWS
+//#define RUNNING_RPI
 
 #define WINDOWS "Windows"
 #define RPI "Raspberry Pi"
