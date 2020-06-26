@@ -68,8 +68,8 @@ ifeq ($(CONFIG),Release)
 endif
 
 OBJECTS_APP := \
-  $(JUCE_OBJDIR)/MoogFilterII_84f94ff8.o \
   $(JUCE_OBJDIR)/StilsonMoogFilter_cd42eae1.o \
+  $(JUCE_OBJDIR)/MoogFilterII_ebc9e33b.o \
   $(JUCE_OBJDIR)/OrganOsc_638212b7.o \
   $(JUCE_OBJDIR)/GPIO_660adcb8.o \
   $(JUCE_OBJDIR)/Main_90ebc5c2.o \
@@ -103,14 +103,14 @@ $(JUCE_OUTDIR)/$(JUCE_TARGET_APP) : $(OBJECTS_APP) $(RESOURCES)
 	-$(V_AT)mkdir -p $(JUCE_OUTDIR)
 	$(V_AT)$(CXX) -o $(JUCE_OUTDIR)/$(JUCE_TARGET_APP) $(OBJECTS_APP) $(JUCE_LDFLAGS) $(JUCE_LDFLAGS_APP) $(RESOURCES) $(TARGET_ARCH)
 
-$(JUCE_OBJDIR)/MoogFilterII_84f94ff8.o: ../../../Filters/Source/MoogFilterII.cpp
-	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling MoogFilterII.cpp"
-	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
-
 $(JUCE_OBJDIR)/StilsonMoogFilter_cd42eae1.o: ../../Source/StilsonMoogFilter.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling StilsonMoogFilter.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/MoogFilterII_ebc9e33b.o: ../../Source/MoogFilterII.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling MoogFilterII.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
 $(JUCE_OBJDIR)/OrganOsc_638212b7.o: ../../Source/OrganOsc.cpp
