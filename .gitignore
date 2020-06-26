@@ -1,5 +1,6 @@
 JuceLibraryCode
 Builds
+Source/PreprocessorDefinitions.h
 *.db
 *.opendb
 *.ipch
