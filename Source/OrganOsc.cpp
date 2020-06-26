@@ -96,7 +96,7 @@ float OrganOsc::getGain()
 
 void OrganOsc::updateFilter()
 {
-    float cutoff = 50.0f + 3500.0f * knobs->readLogarithmic(filterCutoffMCP, filterCutoffPot);
+    float cutoff = 50.0f + 8000.0f * knobs->readLogarithmic(filterCutoffMCP, filterCutoffPot);
     float resonance = knobs->readNormalized(filterResonanceMCP, filterResonancePot);
     filter.set(cutoff, resonance);
 }
