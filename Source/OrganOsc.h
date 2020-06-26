@@ -33,6 +33,7 @@ private:
     int freqMCP, gainMCP, freqPot, gainPot;
     int filterCutoffMCP, filterCutoffPot, filterResonanceMCP, filterResonancePot;
     int filterMode;
+    float gainMax;
     
     int offset;
     float increment;

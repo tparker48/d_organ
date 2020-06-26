@@ -22,6 +22,7 @@ OrganOsc::OrganOsc(AudioBuffer<float>* audio, float baseFreq,int oscID,PotReader
     this->knobs = knobs;
 
     output.buffer = &outBuffer;
+    output.startSample = 0;
 
     freqMin = freqMins[oscID];
     freqRange = freqRanges[oscID];
@@ -37,6 +38,9 @@ OrganOsc::OrganOsc(AudioBuffer<float>* audio, float baseFreq,int oscID,PotReader
     offset = 0;
     increment = 0.0;
 
+    if(oscID == 0) gainMax = .6;
+    else gainMax = .9;
+
     if (oscID == 2 || oscID == 3) filterMode = BANDPASS;
     else filterMode = LOWPASS;
 
@@ -51,7 +55,11 @@ void OrganOsc::renderNextBlock(AudioBuffer<float>& outputBuffer, int startSample
     float samp;
     float gain = getGain();
 
-    if (output.buffer->getNumSamples() < numSamples) output.buffer->setSize(1, numSamples, false, false, true);
+    if (output.buffer->getNumSamples() < numSamples)
+    {
+        output.buffer->setSize(1, numSamples, false, false, true);
+        output.numSamples = numSamples;
+    }
 
     for (int sample = 0; sample < numSamples; sample++)
     {
@@ -80,7 +88,7 @@ float OrganOsc::getFrequency()
 
 float OrganOsc::getGain()
 {
-    return knobs->readNormalized(gainMCP, gainPot);
+    return knobs->readNormalized(gainMCP, gainPot)*gainMax;
 }
 
 void OrganOsc::updateFilter()
