@@ -1,9 +1,9 @@
 JuceLibraryCode
 Builds
-Source/PreprocessorDefinitions.h
 *.db
 *.opendb
 *.ipch
 *.user
 Python/Linear to Logarithmic Lookup Table.txt
 Python/wavConvert.py
+Source/PreprocessorDefinitions.h
