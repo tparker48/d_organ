@@ -138,6 +138,7 @@
     <Lib/>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Filters\Source\MoogFilterII.cpp"/>
     <ClCompile Include="..\..\Source\StilsonMoogFilter.cpp"/>
     <ClCompile Include="..\..\Source\OrganOsc.cpp"/>
     <ClCompile Include="..\..\Source\GPIO.cpp"/>
@@ -1913,6 +1914,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\PreprocessorDefinitions.h"/>
+    <ClInclude Include="..\..\..\Filters\Source\MoogFilterII.h"/>
     <ClInclude Include="..\..\Source\StilsonMoogFilter.h"/>
     <ClInclude Include="..\..\Source\OrganOsc.h"/>
     <ClInclude Include="..\..\Source\DOrganSound.h"/>

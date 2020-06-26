@@ -5,6 +5,9 @@
     <GROUP id="{B98F0AB2-4D5B-FD20-ADBA-003D0D55F07F}" name="Source">
       <FILE id="ZqAvt1" name="PreprocessorDefinitions.h" compile="0" resource="0"
             file="Source/PreprocessorDefinitions.h"/>
+      <FILE id="wgL49m" name="MoogFilterII.cpp" compile="1" resource="0"
+            file="../Filters/Source/MoogFilterII.cpp"/>
+      <FILE id="P2pWd6" name="MoogFilterII.h" compile="0" resource="0" file="../Filters/Source/MoogFilterII.h"/>
       <FILE id="MsxDiI" name="StilsonMoogFilter.cpp" compile="1" resource="0"
             file="Source/StilsonMoogFilter.cpp"/>
       <FILE id="rHdeRo" name="StilsonMoogFilter.h" compile="0" resource="0"
