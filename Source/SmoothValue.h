@@ -16,6 +16,7 @@ public:
 	T getValue()
 	{
 		currentValue = currentValue + (targetValue - currentValue) * transitionSpeed;
+		if (abs(targetValue - currentValue) <= targetValue*0.1) currentValue = targetValue;
 		return currentValue;
 	}
 
