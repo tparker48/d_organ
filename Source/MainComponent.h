@@ -32,7 +32,8 @@ public:
 
 private:
     Synthesiser dorgan;
-    MoogFilterII moogFilter;
+    MoogFilterII moogFilter, crackleFilter;
+    
     PotReader* knobs;
     AudioBuffer<float> oscAudio[4];
     SmoothValue<float> filterCutoff;

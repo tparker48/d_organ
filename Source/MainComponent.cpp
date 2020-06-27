@@ -62,7 +62,8 @@ void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate
 {
     dorgan.setCurrentPlaybackSampleRate(sampleRate);
     moogFilter.init((float)sampleRate);
-
+    crackleFilter.init((float)sampleRate);
+    crackleFilter.set(15000.0f, 0.0f);
     filterCutoff.init(0.0f, 0.1f);
 }
 
@@ -72,10 +73,11 @@ void MainComponent::getNextAudioBlock(const AudioSourceChannelInfo& bufferToFill
 
     
     float resonance = (knobs->readNormalized(1, 5));
-    filterCutoff.setValue(350.0f + knobs->readLogarithmic(1, 4) * 20000.0f);
+    filterCutoff.setValue(300.0f + knobs->readLogarithmic(1, 4) * 20000.0f);
 
     moogFilter.set(filterCutoff.getValue(), resonance);
-    moogFilter.processBlock(bufferToFill, LOWPASS);   
+    moogFilter.processBlock(bufferToFill, LOWPASS);
+    crackleFilter.processBlock(bufferToFill, LOWPASS);
 }
 
 MainComponent::~MainComponent() 
