@@ -63,8 +63,8 @@ void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate
     dorgan.setCurrentPlaybackSampleRate(sampleRate);
     moogFilter.init((float)sampleRate);
     crackleFilter.init((float)sampleRate);
-    crackleFilter.set(15000.0f, 0.0f);
-    filterCutoff.init(0.0f, 0.1f);
+    crackleFilter.set(20000.0f, 0.0f);
+    filterCutoff.init(0.0f, 0.3f);
 }
 
 void MainComponent::getNextAudioBlock(const AudioSourceChannelInfo& bufferToFill)
