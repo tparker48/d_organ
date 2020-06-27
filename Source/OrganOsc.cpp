@@ -1,5 +1,3 @@
-#pragma once
-
 #include "OrganOsc.h"
 
 const float freqMins[] = { 17.325, 116.54, 92.5, 246.94 };
