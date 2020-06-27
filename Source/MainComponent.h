@@ -1,12 +1,13 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include "PreprocessorDefinitions.h"
 #include "DOrganSound.h"
 #include "OrganOsc.h"
 //#include "StilsonMoogFilter.h"
 #include "MoogFilterII.h"
 #include "PotReader.h"
-#include "PreprocessorDefinitions.h"
+#include "SmoothValue.h"
 
 #ifdef RUNNING_WINDOWS
 const std::string MODE = WINDOWS;
@@ -31,12 +32,12 @@ public:
 
 private:
     Synthesiser dorgan;
-    const MidiBuffer trash;
-
+    MoogFilterII moogFilter;
     PotReader* knobs;
     AudioBuffer<float> oscAudio[4];
-    
-    MoogFilterII moogFilter;
+    SmoothValue<float> filterCutoff;
+    float filterResonance;
 
+    const MidiBuffer trash;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(MainComponent)
 };

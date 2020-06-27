@@ -68,6 +68,7 @@ ifeq ($(CONFIG),Release)
 endif
 
 OBJECTS_APP := \
+  $(JUCE_OBJDIR)/SmoothValue_666f3944.o \
   $(JUCE_OBJDIR)/StilsonMoogFilter_cd42eae1.o \
   $(JUCE_OBJDIR)/MoogFilterII_ebc9e33b.o \
   $(JUCE_OBJDIR)/OrganOsc_638212b7.o \
@@ -102,6 +103,11 @@ $(JUCE_OUTDIR)/$(JUCE_TARGET_APP) : $(OBJECTS_APP) $(RESOURCES)
 	-$(V_AT)mkdir -p $(JUCE_LIBDIR)
 	-$(V_AT)mkdir -p $(JUCE_OUTDIR)
 	$(V_AT)$(CXX) -o $(JUCE_OUTDIR)/$(JUCE_TARGET_APP) $(OBJECTS_APP) $(JUCE_LDFLAGS) $(JUCE_LDFLAGS_APP) $(RESOURCES) $(TARGET_ARCH)
+
+$(JUCE_OBJDIR)/SmoothValue_666f3944.o: ../../Source/SmoothValue.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling SmoothValue.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
 $(JUCE_OBJDIR)/StilsonMoogFilter_cd42eae1.o: ../../Source/StilsonMoogFilter.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
