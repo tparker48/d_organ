@@ -8,7 +8,7 @@
 class OrganOsc : public SynthesiserVoice
 {
 public:
-    OrganOsc(AudioBuffer<float>* audio, float baseFreq, int oscID, PotReader* knobs);
+    OrganOsc(AudioBuffer<float>* audio, float baseFreq, int oscID, PotReader* knobs, float* pitchMultiplier);
 
     void renderNextBlock(AudioBuffer<float>& outputBuffer, int startSample, int numSamples);
     
@@ -31,6 +31,7 @@ private:
     PotReader* knobs;
 
     float baseFreq;
+    float* pitchMultiplier;
     float freqMin, freqRange;
     int freqMCP, gainMCP, freqPot, gainPot;
     int filterCutoffMCP, filterCutoffPot, filterResonanceMCP, filterResonancePot;

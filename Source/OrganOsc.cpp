@@ -15,11 +15,12 @@ const int filterResonancePots[] = { 1,3,5,7 };
 
 const int filterModes[] = {LOWPASS, LOWPASS, BANDPASS, HIGHPASS};
 
-OrganOsc::OrganOsc(AudioBuffer<float>* audio, float baseFreq,int oscID,PotReader* knobs)
+OrganOsc::OrganOsc(AudioBuffer<float>* audio, float baseFreq,int oscID,PotReader* knobs, float* pitchMultiplier)
 {
     audioBuffer = audio;
     this->baseFreq = baseFreq;
     this->knobs = knobs;
+    this->pitchMultiplier = pitchMultiplier;
 
     output.buffer = &outBuffer;
     output.startSample = 0;
@@ -80,7 +81,7 @@ void OrganOsc::renderNextBlock(AudioBuffer<float>& outputBuffer, int startSample
 
 float OrganOsc::getFrequency()
 {
-    return freqMin + (freqRange * knobs->readNormalized(freqMCP, freqPot));
+    return (freqMin + (freqRange * knobs->readNormalized(freqMCP, freqPot)))*(*pitchMultiplier);
 }
 
 float OrganOsc::getGain()

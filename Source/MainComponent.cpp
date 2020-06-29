@@ -51,7 +51,7 @@ MainComponent::MainComponent()
         delete reader;
 
         // Instantiate the oscillator voice
-        dorgan.addVoice(new OrganOsc(&oscAudio[i], baseFreq[i], i, knobs));
+        dorgan.addVoice(new OrganOsc(&oscAudio[i], baseFreq[i], i, knobs, &masterPitchMultiplier));
     }
 
     dorgan.clearSounds();
@@ -65,16 +65,17 @@ void MainComponent::prepareToPlay(int samplesPerBlockExpected, double sampleRate
     crackleFilter.init((float)sampleRate);
     crackleFilter.set(20000.0f, 0.0f);
     filterCutoff.init(0.0f, 0.3f);
+    masterPitchMultiplier = 1.0f;
 }
 
 void MainComponent::getNextAudioBlock(const AudioSourceChannelInfo& bufferToFill)
 {
     dorgan.renderNextBlock(*(bufferToFill.buffer), trash, bufferToFill.startSample, bufferToFill.numSamples);
-
     
+    masterPitchMultiplier = knobs->readNormalized(1, 6)*2.5f + .5f;
+
     float resonance = (knobs->readNormalized(1, 5));
     filterCutoff.setValue(300.0f + knobs->readLogarithmic(1, 4) * 20000.0f);
-
     moogFilter.set(filterCutoff.getValue(), resonance);
     moogFilter.processBlock(bufferToFill, LOWPASS);
     crackleFilter.processBlock(bufferToFill, LOWPASS);

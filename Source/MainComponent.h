@@ -38,6 +38,7 @@ private:
     AudioBuffer<float> oscAudio[4];
     SmoothValue<float> filterCutoff;
     float filterResonance;
+    float masterPitchMultiplier;
 
     const MidiBuffer trash;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(MainComponent)
