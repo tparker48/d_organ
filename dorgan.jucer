@@ -2,31 +2,35 @@
 
 <JUCERPROJECT id="svZ23X" name="dorgan" projectType="guiapp" jucerVersion="5.4.7">
   <MAINGROUP id="qLKBCm" name="dorgan">
-    <GROUP id="{B98F0AB2-4D5B-FD20-ADBA-003D0D55F07F}" name="Source">
-      <FILE id="TUa60F" name="SmoothValue.cpp" compile="1" resource="0" file="Source/SmoothValue.cpp"/>
-      <FILE id="Dz0fRL" name="SmoothValue.h" compile="0" resource="0" file="Source/SmoothValue.h"/>
+    <GROUP id="{24684361-C5C4-BB6C-2D7D-EB8248602A94}" name="Include">
       <FILE id="ZqAvt1" name="PreprocessorDefinitions.h" compile="0" resource="0"
             file="Source/PreprocessorDefinitions.h"/>
-      <FILE id="MsxDiI" name="StilsonMoogFilter.cpp" compile="1" resource="0"
-            file="Source/StilsonMoogFilter.cpp"/>
+      <FILE id="emhfJb" name="GPIO.h" compile="0" resource="0" file="Source/GPIO.h"/>
+      <FILE id="XwR4Pr" name="MCP3008.h" compile="0" resource="0" file="Source/MCP3008.h"/>
+      <FILE id="gXNjkn" name="PotReader.h" compile="0" resource="0" file="Source/PotReader.h"/>
+      <FILE id="fudPg9" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
+      <FILE id="jGjFWh" name="DOrganSound.h" compile="0" resource="0" file="Source/DOrganSound.h"/>
+      <FILE id="B3o12Z" name="OrganOsc.h" compile="0" resource="0" file="Source/OrganOsc.h"/>
       <FILE id="rHdeRo" name="StilsonMoogFilter.h" compile="0" resource="0"
             file="Source/StilsonMoogFilter.h"/>
-      <FILE id="NFil15" name="MoogFilterII.cpp" compile="1" resource="0"
-            file="Source/MoogFilterII.cpp"/>
       <FILE id="TNUdto" name="MoogFilterII.h" compile="0" resource="0" file="Source/MoogFilterII.h"/>
-      <FILE id="RSkM1S" name="OrganOsc.cpp" compile="1" resource="0" file="Source/OrganOsc.cpp"/>
-      <FILE id="B3o12Z" name="OrganOsc.h" compile="0" resource="0" file="Source/OrganOsc.h"/>
-      <FILE id="jGjFWh" name="DOrganSound.h" compile="0" resource="0" file="Source/DOrganSound.h"/>
-      <FILE id="hsTpdN" name="GPIO.cpp" compile="1" resource="0" file="Source/GPIO.cpp"/>
-      <FILE id="emhfJb" name="GPIO.h" compile="0" resource="0" file="Source/GPIO.h"/>
+      <FILE id="xeT5Vx" name="LFO.h" compile="0" resource="0" file="Source/LFO.h"/>
+      <FILE id="Dz0fRL" name="SmoothValue.h" compile="0" resource="0" file="Source/SmoothValue.h"/>
+    </GROUP>
+    <GROUP id="{B98F0AB2-4D5B-FD20-ADBA-003D0D55F07F}" name="Source">
       <FILE id="ZYbF8V" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+      <FILE id="hsTpdN" name="GPIO.cpp" compile="1" resource="0" file="Source/GPIO.cpp"/>
+      <FILE id="GkKYiw" name="MCP3008.cpp" compile="1" resource="0" file="Source/MCP3008.cpp"/>
+      <FILE id="vZXTkk" name="PotReader.cpp" compile="1" resource="0" file="Source/PotReader.cpp"/>
       <FILE id="TTIHxw" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
-      <FILE id="fudPg9" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
-      <FILE id="GkKYiw" name="MCP3008.cpp" compile="1" resource="0" file="Source/MCP3008.cpp"/>
-      <FILE id="XwR4Pr" name="MCP3008.h" compile="0" resource="0" file="Source/MCP3008.h"/>
-      <FILE id="vZXTkk" name="PotReader.cpp" compile="1" resource="0" file="Source/PotReader.cpp"/>
-      <FILE id="gXNjkn" name="PotReader.h" compile="0" resource="0" file="Source/PotReader.h"/>
+      <FILE id="RSkM1S" name="OrganOsc.cpp" compile="1" resource="0" file="Source/OrganOsc.cpp"/>
+      <FILE id="MsxDiI" name="StilsonMoogFilter.cpp" compile="1" resource="0"
+            file="Source/StilsonMoogFilter.cpp"/>
+      <FILE id="PcxSW7" name="LFO.cpp" compile="1" resource="0" file="Source/LFO.cpp"/>
+      <FILE id="NFil15" name="MoogFilterII.cpp" compile="1" resource="0"
+            file="Source/MoogFilterII.cpp"/>
+      <FILE id="TUa60F" name="SmoothValue.cpp" compile="1" resource="0" file="Source/SmoothValue.cpp"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>

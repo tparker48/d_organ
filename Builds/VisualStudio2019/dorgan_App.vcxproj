@@ -138,15 +138,16 @@
     <Lib/>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\SmoothValue.cpp"/>
-    <ClCompile Include="..\..\Source\StilsonMoogFilter.cpp"/>
-    <ClCompile Include="..\..\Source\MoogFilterII.cpp"/>
-    <ClCompile Include="..\..\Source\OrganOsc.cpp"/>
-    <ClCompile Include="..\..\Source\GPIO.cpp"/>
     <ClCompile Include="..\..\Source\Main.cpp"/>
-    <ClCompile Include="..\..\Source\MainComponent.cpp"/>
+    <ClCompile Include="..\..\Source\GPIO.cpp"/>
     <ClCompile Include="..\..\Source\MCP3008.cpp"/>
     <ClCompile Include="..\..\Source\PotReader.cpp"/>
+    <ClCompile Include="..\..\Source\MainComponent.cpp"/>
+    <ClCompile Include="..\..\Source\OrganOsc.cpp"/>
+    <ClCompile Include="..\..\Source\StilsonMoogFilter.cpp"/>
+    <ClCompile Include="..\..\Source\LFO.cpp"/>
+    <ClCompile Include="..\..\Source\MoogFilterII.cpp"/>
+    <ClCompile Include="..\..\Source\SmoothValue.cpp"/>
     <ClCompile Include="..\..\..\..\..\..\JUCE\modules\juce_audio_basics\buffers\juce_AudioChannelSet.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
@@ -1914,16 +1915,17 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_opengl.cpp"/>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\SmoothValue.h"/>
     <ClInclude Include="..\..\Source\PreprocessorDefinitions.h"/>
-    <ClInclude Include="..\..\Source\StilsonMoogFilter.h"/>
-    <ClInclude Include="..\..\Source\MoogFilterII.h"/>
-    <ClInclude Include="..\..\Source\OrganOsc.h"/>
-    <ClInclude Include="..\..\Source\DOrganSound.h"/>
     <ClInclude Include="..\..\Source\GPIO.h"/>
-    <ClInclude Include="..\..\Source\MainComponent.h"/>
     <ClInclude Include="..\..\Source\MCP3008.h"/>
     <ClInclude Include="..\..\Source\PotReader.h"/>
+    <ClInclude Include="..\..\Source\MainComponent.h"/>
+    <ClInclude Include="..\..\Source\DOrganSound.h"/>
+    <ClInclude Include="..\..\Source\OrganOsc.h"/>
+    <ClInclude Include="..\..\Source\StilsonMoogFilter.h"/>
+    <ClInclude Include="..\..\Source\MoogFilterII.h"/>
+    <ClInclude Include="..\..\Source\LFO.h"/>
+    <ClInclude Include="..\..\Source\SmoothValue.h"/>
     <ClInclude Include="..\..\..\..\..\..\JUCE\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.h"/>
     <ClInclude Include="..\..\..\..\..\..\JUCE\modules\juce_audio_basics\buffers\juce_AudioChannelSet.h"/>
     <ClInclude Include="..\..\..\..\..\..\JUCE\modules\juce_audio_basics\buffers\juce_AudioDataConverters.h"/>

@@ -8,6 +8,7 @@
 #include "MoogFilterII.h"
 #include "PotReader.h"
 #include "SmoothValue.h"
+#include "LFO.h"
 
 #ifdef RUNNING_WINDOWS
 const std::string MODE = WINDOWS;
@@ -39,7 +40,7 @@ private:
     SmoothValue<float> filterCutoff;
     float filterResonance;
     float masterPitchMultiplier;
-
+    
     const MidiBuffer trash;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(MainComponent)
 };

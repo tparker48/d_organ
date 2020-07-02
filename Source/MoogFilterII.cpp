@@ -10,6 +10,7 @@ Comes from a Stilson/Smith CCRMA paper
 void MoogFilterII::init(float sampleRate)
 {
     this->sampleRate = sampleRate;
+    halfSampleRate = sampleRate/2.0f;
 	out1 = 0.0f;
 	out2 = 0.0f;
 	out3 = 0.0f;
@@ -23,7 +24,7 @@ void MoogFilterII::init(float sampleRate)
 // Set coefficients given frequency & resonance [0.0...1.0]
 void MoogFilterII::set(float cutoff, float resonance)
 {
-    cutoff = cutoff / (sampleRate/2.0f);
+    cutoff /= halfSampleRate;
 	resonance = resonance * 4.0f;
 	this->cutoff = cutoff;
 	this->resonance = resonance;

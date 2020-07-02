@@ -24,7 +24,7 @@ public:
 	void processBlock(const AudioSourceChannelInfo& bufferToFill, int passMode);
 
 private:
-    float sampleRate;
+    float sampleRate, halfSampleRate;
 	float cutoff, resonance;
 	float out1, out2, out3, out4;
 	float in1, in2, in3, in4;

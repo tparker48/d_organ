@@ -2,6 +2,9 @@
 
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="dorgan\Include">
+      <UniqueIdentifier>{51BC4579-2EC8-87BE-DFB1-89213993DAB2}</UniqueIdentifier>
+    </Filter>
     <Filter Include="dorgan\Source">
       <UniqueIdentifier>{5A5EFC6D-02AF-3DF6-27E0-CA35AC00B9ED}</UniqueIdentifier>
     </Filter>
@@ -412,31 +415,34 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\SmoothValue.cpp">
-      <Filter>dorgan\Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\StilsonMoogFilter.cpp">
-      <Filter>dorgan\Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\MoogFilterII.cpp">
-      <Filter>dorgan\Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\OrganOsc.cpp">
-      <Filter>dorgan\Source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\GPIO.cpp">
-      <Filter>dorgan\Source</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\Main.cpp">
       <Filter>dorgan\Source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\MainComponent.cpp">
+    <ClCompile Include="..\..\Source\GPIO.cpp">
       <Filter>dorgan\Source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\MCP3008.cpp">
       <Filter>dorgan\Source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\PotReader.cpp">
+      <Filter>dorgan\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\MainComponent.cpp">
+      <Filter>dorgan\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\OrganOsc.cpp">
+      <Filter>dorgan\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\StilsonMoogFilter.cpp">
+      <Filter>dorgan\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\LFO.cpp">
+      <Filter>dorgan\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\MoogFilterII.cpp">
+      <Filter>dorgan\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\SmoothValue.cpp">
       <Filter>dorgan\Source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\..\JUCE\modules\juce_audio_basics\buffers\juce_AudioChannelSet.cpp">
@@ -2349,35 +2355,38 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\SmoothValue.h">
-      <Filter>dorgan\Source</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\PreprocessorDefinitions.h">
-      <Filter>dorgan\Source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\StilsonMoogFilter.h">
-      <Filter>dorgan\Source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\MoogFilterII.h">
-      <Filter>dorgan\Source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\OrganOsc.h">
-      <Filter>dorgan\Source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\DOrganSound.h">
-      <Filter>dorgan\Source</Filter>
+      <Filter>dorgan\Include</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\GPIO.h">
-      <Filter>dorgan\Source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\MainComponent.h">
-      <Filter>dorgan\Source</Filter>
+      <Filter>dorgan\Include</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\MCP3008.h">
-      <Filter>dorgan\Source</Filter>
+      <Filter>dorgan\Include</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\PotReader.h">
-      <Filter>dorgan\Source</Filter>
+      <Filter>dorgan\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\MainComponent.h">
+      <Filter>dorgan\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\DOrganSound.h">
+      <Filter>dorgan\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\OrganOsc.h">
+      <Filter>dorgan\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\StilsonMoogFilter.h">
+      <Filter>dorgan\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\MoogFilterII.h">
+      <Filter>dorgan\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\LFO.h">
+      <Filter>dorgan\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\SmoothValue.h">
+      <Filter>dorgan\Include</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\..\JUCE\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.h">
       <Filter>JUCE Modules\juce_audio_basics\audio_play_head</Filter>
