@@ -67,8 +67,8 @@ void OrganOsc::renderNextBlock(AudioBuffer<float>& outputBuffer, int startSample
         output.buffer->setSample(0, sample, samp);
     }
 
-    updateFilter();
-    filter.processBlock(output, filterMode);
+    //updateFilter();
+    //filter.processBlock(output, filterMode);
 
     for (int sample = 0; sample < numSamples; sample++)
     {

@@ -39,12 +39,30 @@ private:
 
 class SquareLFO : public LFO
 {
+public:
+	SquareLFO(int updateInterval, float sampleRate);
 private:
 	float wave(float angleInRadians);
 };
 
 class SinLFO : public LFO
 {
+public:
+	SinLFO(int updateInterval, float samplerate);
 private:
 	float wave(float angleInRadians);
+};
+
+class SinSampleHoldLFO : public LFO
+{
+public:
+	SinSampleHoldLFO(int updateInterval, float sampleRate);
+	// 0..1 range. 0 for pure sin, 1 for pure SH, anything inbetween mixes the two
+	void setMix(float ratio);
+
+private:
+	float wave(float angleInRadians);
+	Random numberGenerator;
+	float holdValue, lastTheta;
+	float mix;
 };
