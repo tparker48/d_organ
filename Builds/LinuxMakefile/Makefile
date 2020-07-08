@@ -74,8 +74,8 @@ OBJECTS_APP := \
   $(JUCE_OBJDIR)/PotReader_287d3cd9.o \
   $(JUCE_OBJDIR)/MainComponent_a6ffb4a5.o \
   $(JUCE_OBJDIR)/OrganOsc_638212b7.o \
-  $(JUCE_OBJDIR)/StilsonMoogFilter_cd42eae1.o \
   $(JUCE_OBJDIR)/LFO_e2398216.o \
+  $(JUCE_OBJDIR)/MoogFilterI_ff4d9a58.o \
   $(JUCE_OBJDIR)/MoogFilterII_ebc9e33b.o \
   $(JUCE_OBJDIR)/SmoothValue_666f3944.o \
   $(JUCE_OBJDIR)/include_juce_audio_basics_8a4e984a.o \
@@ -135,14 +135,14 @@ $(JUCE_OBJDIR)/OrganOsc_638212b7.o: ../../Source/OrganOsc.cpp
 	@echo "Compiling OrganOsc.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
-$(JUCE_OBJDIR)/StilsonMoogFilter_cd42eae1.o: ../../Source/StilsonMoogFilter.cpp
-	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
-	@echo "Compiling StilsonMoogFilter.cpp"
-	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
-
 $(JUCE_OBJDIR)/LFO_e2398216.o: ../../Source/LFO.cpp
 	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
 	@echo "Compiling LFO.cpp"
+	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
+
+$(JUCE_OBJDIR)/MoogFilterI_ff4d9a58.o: ../../Source/MoogFilterI.cpp
+	-$(V_AT)mkdir -p $(JUCE_OBJDIR)
+	@echo "Compiling MoogFilterI.cpp"
 	$(V_AT)$(CXX) $(JUCE_CXXFLAGS) $(JUCE_CPPFLAGS_APP) $(JUCE_CFLAGS_APP) -o "$@" -c "$<"
 
 $(JUCE_OBJDIR)/MoogFilterII_ebc9e33b.o: ../../Source/MoogFilterII.cpp

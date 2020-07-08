@@ -144,8 +144,8 @@
     <ClCompile Include="..\..\Source\PotReader.cpp"/>
     <ClCompile Include="..\..\Source\MainComponent.cpp"/>
     <ClCompile Include="..\..\Source\OrganOsc.cpp"/>
-    <ClCompile Include="..\..\Source\StilsonMoogFilter.cpp"/>
     <ClCompile Include="..\..\Source\LFO.cpp"/>
+    <ClCompile Include="..\..\Source\MoogFilterI.cpp"/>
     <ClCompile Include="..\..\Source\MoogFilterII.cpp"/>
     <ClCompile Include="..\..\Source\SmoothValue.cpp"/>
     <ClCompile Include="..\..\..\..\..\..\JUCE\modules\juce_audio_basics\buffers\juce_AudioChannelSet.cpp">
@@ -1922,7 +1922,7 @@
     <ClInclude Include="..\..\Source\MainComponent.h"/>
     <ClInclude Include="..\..\Source\DOrganSound.h"/>
     <ClInclude Include="..\..\Source\OrganOsc.h"/>
-    <ClInclude Include="..\..\Source\StilsonMoogFilter.h"/>
+    <ClInclude Include="..\..\Source\MoogFilterI.h"/>
     <ClInclude Include="..\..\Source\MoogFilterII.h"/>
     <ClInclude Include="..\..\Source\LFO.h"/>
     <ClInclude Include="..\..\Source\SmoothValue.h"/>

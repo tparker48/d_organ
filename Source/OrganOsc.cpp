@@ -62,7 +62,7 @@ void OrganOsc::renderNextBlock(AudioBuffer<float>& outputBuffer, int startSample
     for (int sample = 0; sample < numSamples; sample++)
     {
         sampleIndex = floor(increment * sample);
-        samp = gain * audioBuffer->getSample(0, (sampleIndex + offset) % audioBuffer->getNumSamples());
+        samp = gain * getInterpolatedSample(sampleIndex + offset);
 
         output.buffer->setSample(0, sample, samp);
     }
@@ -94,4 +94,22 @@ void OrganOsc::updateFilter()
     float cutoff = 350.0f + 20000.0f * knobs->readLogarithmic(filterCutoffMCP, filterCutoffPot);
     float resonance = knobs->readNormalized(filterResonanceMCP, filterResonancePot);
     filter.set(cutoff, resonance);
+}
+
+float OrganOsc::getInterpolatedSample(float index)
+{
+    float lo = floor(index);
+    float hi = ceil(index);
+    float ratio = (index - lo);
+
+    if (lo >= audioBuffer->getNumSamples()) lo -= audioBuffer->getNumSamples();
+    if (hi >= audioBuffer->getNumSamples()) hi -= audioBuffer->getNumSamples();
+    
+    return interpolate(audioBuffer->getSample(0, (lo)), audioBuffer->getSample(0, (hi)), ratio);
+}
+
+
+float OrganOsc::interpolate(float a, float b, float ratio)
+{
+    return ((1.0f - ratio) * a) + (ratio * b);
 }

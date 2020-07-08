@@ -433,10 +433,10 @@
     <ClCompile Include="..\..\Source\OrganOsc.cpp">
       <Filter>dorgan\Source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\StilsonMoogFilter.cpp">
+    <ClCompile Include="..\..\Source\LFO.cpp">
       <Filter>dorgan\Source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\LFO.cpp">
+    <ClCompile Include="..\..\Source\MoogFilterI.cpp">
       <Filter>dorgan\Source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\MoogFilterII.cpp">
@@ -2376,7 +2376,7 @@
     <ClInclude Include="..\..\Source\OrganOsc.h">
       <Filter>dorgan\Include</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\StilsonMoogFilter.h">
+    <ClInclude Include="..\..\Source\MoogFilterI.h">
       <Filter>dorgan\Include</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\MoogFilterII.h">

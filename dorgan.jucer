@@ -11,8 +11,7 @@
       <FILE id="fudPg9" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="jGjFWh" name="DOrganSound.h" compile="0" resource="0" file="Source/DOrganSound.h"/>
       <FILE id="B3o12Z" name="OrganOsc.h" compile="0" resource="0" file="Source/OrganOsc.h"/>
-      <FILE id="rHdeRo" name="StilsonMoogFilter.h" compile="0" resource="0"
-            file="Source/StilsonMoogFilter.h"/>
+      <FILE id="VsCUPp" name="MoogFilterI.h" compile="0" resource="0" file="Source/MoogFilterI.h"/>
       <FILE id="TNUdto" name="MoogFilterII.h" compile="0" resource="0" file="Source/MoogFilterII.h"/>
       <FILE id="xeT5Vx" name="LFO.h" compile="0" resource="0" file="Source/LFO.h"/>
       <FILE id="Dz0fRL" name="SmoothValue.h" compile="0" resource="0" file="Source/SmoothValue.h"/>
@@ -25,9 +24,8 @@
       <FILE id="TTIHxw" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
       <FILE id="RSkM1S" name="OrganOsc.cpp" compile="1" resource="0" file="Source/OrganOsc.cpp"/>
-      <FILE id="MsxDiI" name="StilsonMoogFilter.cpp" compile="1" resource="0"
-            file="Source/StilsonMoogFilter.cpp"/>
       <FILE id="PcxSW7" name="LFO.cpp" compile="1" resource="0" file="Source/LFO.cpp"/>
+      <FILE id="VY59Pc" name="MoogFilterI.cpp" compile="1" resource="0" file="Source/MoogFilterI.cpp"/>
       <FILE id="NFil15" name="MoogFilterII.cpp" compile="1" resource="0"
             file="Source/MoogFilterII.cpp"/>
       <FILE id="TUa60F" name="SmoothValue.cpp" compile="1" resource="0" file="Source/SmoothValue.cpp"/>

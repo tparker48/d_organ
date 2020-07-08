@@ -23,6 +23,9 @@ private:
     float getFrequency();
     float getGain();
     void updateFilter();
+    float getInterpolatedSample(float index);
+    // ratio [0..1]
+    float interpolate(float a, float b, float ratio);
 
     AudioBuffer<float>* audioBuffer, outBuffer;
     AudioSourceChannelInfo output;
