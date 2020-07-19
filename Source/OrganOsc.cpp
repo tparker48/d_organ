@@ -39,12 +39,11 @@ OrganOsc::OrganOsc(AudioBuffer<float>* audio, float baseFreq,int oscID,PotReader
     offset = 0;
     increment = 0.0;
 
-    if(oscID == 0) gainMax = 1.0;
-    else gainMax = 1.0;
+    gainMax = .25;
 
     filterMode = filterModes[oscID];
     filter.init((float)getSampleRate());
-    filter.setSaturationAmount(0.0);
+    //filter.setSaturationAmount(0.0);
 }
 
 void OrganOsc::renderNextBlock(AudioBuffer<float>& outputBuffer, int startSample, int numSamples)
@@ -94,8 +93,7 @@ void OrganOsc::updateFilter()
 {
     float cutoff = 350.0f + 20000.0f * knobs->readLogarithmic(filterCutoffMCP, filterCutoffPot);
     float resonance = knobs->readNormalized(filterResonanceMCP, filterResonancePot);
-    filter.setCutoff(cutoff);
-    filter.setResonance(resonance);
+    filter.set(cutoff,resonance);
 }
 
 float OrganOsc::getInterpolatedSample(float index)

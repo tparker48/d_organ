@@ -4,9 +4,13 @@ file.write('float lin2log[1024] = {\n')
 
 comma = ','
 
+maxInput = 1023.0
+a =-1.1977797
+b = 0.165122
+
 lookup = []
 for i in range(1024):
-    lookup.append(.25*(5**(i/1023.0))-.25)
+    lookup.append( a*( b**(i/maxInput) )- a)
     print(lookup[i])
     if(i==1023):
         comma = ''
