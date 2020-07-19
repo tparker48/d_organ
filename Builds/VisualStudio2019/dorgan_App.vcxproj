@@ -138,6 +138,7 @@
     <Lib/>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\StilsonMoogFilter.cpp"/>
     <ClCompile Include="..\..\Source\Main.cpp"/>
     <ClCompile Include="..\..\Source\GPIO.cpp"/>
     <ClCompile Include="..\..\Source\MCP3008.cpp"/>
@@ -1915,6 +1916,7 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_opengl.cpp"/>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\StilsonMoogFilter.h"/>
     <ClInclude Include="..\..\Source\PreprocessorDefinitions.h"/>
     <ClInclude Include="..\..\Source\GPIO.h"/>
     <ClInclude Include="..\..\Source\MCP3008.h"/>

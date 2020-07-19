@@ -415,6 +415,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\StilsonMoogFilter.cpp">
+      <Filter>dorgan\Source</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\Main.cpp">
       <Filter>dorgan\Source</Filter>
     </ClCompile>
@@ -2355,6 +2358,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\StilsonMoogFilter.h">
+      <Filter>dorgan\Include</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\PreprocessorDefinitions.h">
       <Filter>dorgan\Include</Filter>
     </ClInclude>

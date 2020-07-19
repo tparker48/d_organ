@@ -4,8 +4,8 @@
 #include "PreprocessorDefinitions.h"
 #include "DOrganSound.h"
 #include "OrganOsc.h"
-//#include "StilsonMoogFilter.h"
-#include "MoogFilterII.h"
+#include "StilsonMoogFilter.h"
+//#include "MoogFilterII.h"
 #include "PotReader.h"
 #include "SmoothValue.h"
 #include "LFO.h"
@@ -33,7 +33,7 @@ public:
 
 private:
     Synthesiser dorgan;
-    MoogFilterII moogFilter, crackleFilter;
+    StilsonMoogFilter moogFilter;
     
     PotReader* knobs;
     AudioBuffer<float> oscAudio[4];
