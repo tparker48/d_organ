@@ -12,5 +12,6 @@ Built with the JUCE framework and a Raspberry Pi
 
 
 ## Layout / Functionality
+- 4 Oscillators with "Gain" and "Frequency (Hz)" knobs
 <img src="https://github.com/tparker48/d_organ/blob/master/Images/layout1.jpg" />
 
