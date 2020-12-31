@@ -14,5 +14,6 @@ Built with the JUCE framework and a Raspberry Pi
 ## Layout / Functionality
 - 4 Oscillators with "Gain" and "Frequency (Hz)" knobs
 - Dedicated filter for each oscillator (mix of LPFs, HPFs, etc), as well as a master filter (LPF)
+- LFOs for modulating the master filter cutoff, as well as oscillator 3's filter cutoff
 <img src="https://github.com/tparker48/d_organ/blob/master/Images/layout1.jpg" />
 
