@@ -12,4 +12,5 @@ Built with the JUCE framework and a Raspberry Pi
 
 
 ## Layout / Functionality
-https://github.com/tparker48/d_organ/blob/master/Images/layout1.jpg
+<img src="https://github.com/tparker48/d_organ/blob/master/Images/layout1.jpg" />
+
