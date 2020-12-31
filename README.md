@@ -9,3 +9,7 @@ Built with the JUCE framework and a Raspberry Pi
 - 1X Raspberry Pi 4
 - 24X Linear Potentiometers
 - 4X Analog to Digital Converters (MCP3008)
+
+
+## Layout / Functionality
+https://github.com/tparker48/d_organ/blob/master/Images/layout1.jpg
