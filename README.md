@@ -2,7 +2,7 @@
 
 Drone Organ Synthesizer. Manipulates high quality organ samples to create a powerful sound.
 
-Built with the JUCE framework and a Raspberry Pi 
+Built with the JUCE framework and a Raspberry Pi 4
 
 ## Parts:
 
